@@ -1,4 +1,3 @@
-
 import streamlit as st
 import numpy as np
 import joblib
@@ -415,5 +414,4 @@ with tab_about:
     st.markdown("Supports commodity traders, energy enterprises and risk managers to evaluate price fluctuation risk under various geopolitical crisis scenarios.")
 
 # Footer caption
-st.markdown("---")
 st.caption(f"🛢️ Global Oil Price Forecasting | XGBoost | {len(unique_events)} Historical Events | {len(feature_names)} Total Input Features")
