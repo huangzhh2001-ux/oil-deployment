@@ -1,3 +1,4 @@
+
 import streamlit as st
 import numpy as np
 import joblib
@@ -148,7 +149,7 @@ feature_categories = {
 st.markdown('<h1 style="font-size:32px">🛢️ Global Oil Price Prediction Dashboard</h1>', unsafe_allow_html=True)
 st.markdown("### Data-Driven Brent Oil Analysis under Geopolitical & Macroeconomic Influences")
 st.markdown("#### 👥 Group 2")
-st.markdown("---")
+
 
 # Create three page tabs
 tab_pred, tab_model, tab_about = st.tabs(["Predict & Explore", "Model", "About"])
@@ -414,4 +415,5 @@ with tab_about:
     st.markdown("Supports commodity traders, energy enterprises and risk managers to evaluate price fluctuation risk under various geopolitical crisis scenarios.")
 
 # Footer caption
+st.markdown("---")
 st.caption(f"🛢️ Global Oil Price Forecasting | XGBoost | {len(unique_events)} Historical Events | {len(feature_names)} Total Input Features")
