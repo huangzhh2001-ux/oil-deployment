@@ -231,7 +231,11 @@ with tab_pred:
 
     # Prediction trigger button
     st.sidebar.markdown("---")
-    if st.sidebar.button("🚀 Predict Oil Price", use_container_width=True, type="primary"):
+    # 增加上方间距
+    st.sidebar.markdown("<br><br>", unsafe_allow_html=True)
+
+    # 按钮更换图标、保留原有功能
+    if st.sidebar.button("📈 Predict Oil Price", use_container_width=True, type="primary"):
         input_array = np.array([[user_inputs.get(feat, defaults.get(feat, 0.0)) for feat in feature_names]])
         prediction = model.predict(input_array)[0]
         uncertainty = prediction * user_inputs.get('brent_volatility_30d', 0.2) * 1.96
