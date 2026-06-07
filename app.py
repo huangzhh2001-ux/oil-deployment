@@ -1,4 +1,3 @@
-
 import streamlit as st
 import numpy as np
 import joblib
@@ -152,7 +151,21 @@ st.markdown("#### 👥 Group 2")
 
 
 # Create three page tabs
-tab_pred, tab_model, tab_about = st.tabs(["Predict & Explore", "Model", "About"])
+st.markdown("""
+<style>
+.stTabs [data-baseweb="tab"] {
+    margin-left: 25px !important;
+    margin-right: 25px !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# Create three page tabs with icons
+tab_pred, tab_model, tab_about = st.tabs([
+    "📊 Predict & Explore",
+    "📈 Model",
+    "ℹ️ About"
+])
 
 # ========== Tab1: Predict & Explore Page ==========
 with tab_pred:
@@ -231,8 +244,6 @@ with tab_pred:
 
     # Prediction trigger button
     st.sidebar.markdown("---")
-    # 增加上方间距
-    st.sidebar.markdown("<br><br>", unsafe_allow_html=True)
 
     # 按钮更换图标、保留原有功能
     if st.sidebar.button("📈 Predict Oil Price", use_container_width=True, type="primary"):
@@ -315,7 +326,7 @@ with tab_pred:
     else:
         st.markdown(f"""
         ## 👋 Welcome to Oil Price Prediction System
-        ### 📊 Dataset Overview:
+        ### Dataset Overview:
         - **{len(unique_events)} Historical Geopolitical Events** loaded from raw dataset
         - **{len(feature_names)} Predictive Features** including macro, volatility and event indicators
         ### Quick Start Guide:
