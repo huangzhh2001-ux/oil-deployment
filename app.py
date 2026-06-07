@@ -245,7 +245,6 @@ with tab_pred:
     # Prediction trigger button
     st.sidebar.markdown("---")
 
-    # 按钮更换图标、保留原有功能
     if st.sidebar.button("📈 Predict Oil Price", use_container_width=True, type="primary"):
         input_array = np.array([[user_inputs.get(feat, defaults.get(feat, 0.0)) for feat in feature_names]])
         prediction = model.predict(input_array)[0]
@@ -349,7 +348,7 @@ with tab_model:
     st.markdown("---")
     st.subheader("Actual vs Forecasted Price with Dynamic 95% Confidence Interval")
 
-    # 从全局session_state读取侧边实时参数
+    
     if "input_params" not in st.session_state:
         st.session_state["input_params"] = defaults
     para = st.session_state["input_params"]
